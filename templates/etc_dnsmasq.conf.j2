@@ -61,6 +61,7 @@ address= {{ dnsmasq_wildchar_address }}
 
 {% if dnsmasq_upstream_servers is defined %}
 {% if dnsmasq_upstream_servers is iterable %}
+all-servers
 {% for host in dnsmasq_upstream_servers %}
 server={{ host }}
 {% endfor %}
