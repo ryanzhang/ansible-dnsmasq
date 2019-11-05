@@ -32,6 +32,7 @@ None of the variables below are required.
 | `dnsmasq_resolv_file`      | -       | Set this to specify a custom `resolv.conf` file.                                                                                                          |
 | `dnsmasq_upstream_servers` | -       | Set this to specify the IP address of upstream DNS servers directly. You can specify one ore more servers as a list.                                    |
 | `dnsmasq_srv_hosts`        | -       | Array of hashes specifying SRV records, with keys `name` (mandatory), `target`, `port`, `priority` and `weight` for each record. See below.              |
+| `dnsmasq_wildchar_address`        | -       | Array of `address` to match wildchar dns matching              |
 
 ### DNS settings
 
@@ -57,6 +58,11 @@ SRV records (see [dnsmasq(8)](http://linux.die.net/man/8/dnsmasq) or [RFC 2782](
         port: 389
 ```
 
+Wildchar dns matching
+```Yaml
+    dnsmasq_wildchar_address:
+        - /apps.dev.example.com/192.168.122.130
+```
 ### DHCP settings
 
 A DHCP range can be specified with the variable `dnsmasq_dhcp_ranges`, e.g.:

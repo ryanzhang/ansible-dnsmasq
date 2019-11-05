@@ -49,6 +49,16 @@ dhcp-host={{ host.mac }},{{ host.ip  }}{% if host.name is defined %},{{ host.nam
 dhcp-option=option:router,{{ dnsmasq_option_router }}
 {% endif %}
 
+{% if dnsmasq_wildchar_address is defined %}
+{% if dnsmasq_wildchar_address is iterable %}
+{% for pattern in dnsmasq_wildchar_address %}
+address={{ pattern }}
+{% endfor %}
+{% else %}
+address= {{ dnsmasq_wildchar_address }}
+{% endif %}
+{% endif %}
+
 {% if dnsmasq_upstream_servers is defined %}
 {% if dnsmasq_upstream_servers is iterable %}
 {% for host in dnsmasq_upstream_servers %}
