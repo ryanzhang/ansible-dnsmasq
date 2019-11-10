@@ -33,6 +33,7 @@ None of the variables below are required.
 | `dnsmasq_upstream_servers` | -       | Set this to specify the IP address of upstream DNS servers directly. You can specify one ore more servers as a list.                                    |
 | `dnsmasq_srv_hosts`        | -       | Array of hashes specifying SRV records, with keys `name` (mandatory), `target`, `port`, `priority` and `weight` for each record. See below.              |
 | `dnsmasq_wildchar_address`        | -       | Array of `address` to match wildchar dns matching              |
+| `dnsmasq_no_resolv_file`        | -       | if true add no-resolv directive, so it will ignore the `/etc/resolv.conf`, Using `server` in dnsmasq instead |
 
 ### DNS settings
 
